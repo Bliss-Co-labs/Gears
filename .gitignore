@@ -1,0 +1,3 @@
+database/*
+!database/.gitkeep
+api/__pycache__
