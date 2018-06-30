@@ -142,7 +142,7 @@ Return Data:
       }
     ]
 
-###### `/api/generateoverlayzip`
+#### `/api/generateoverlayzip`
 
 Gets a zip file of specified overlays
 
