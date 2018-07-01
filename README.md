@@ -4,7 +4,7 @@ Gears (maybe a temporary name)
 Components in Docker
 ------
   - `api/` Flask API Endpoint
-  - `database/` MongoDB for Data
+  - `database/` MySQL for Data
   - `webui/` Nginx for the Web UI
 
 Adding to Components

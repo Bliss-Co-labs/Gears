@@ -5,17 +5,28 @@ services:
     build: api
     ports:
       - 5000:5000
+    environment:
+      - MYSQL_ROOT_PASSWORD="${MYSQL_ROOT_PASSWORD}"
+    links:
+      - db
     depends_on:
       - db
       - webui
   db:
-    image: mongo
+    image: mysql:5.6
     ports:
-      - 27017:27017
+      - 3306:3306
+    environment:
+      - MYSQL_DATABASE=gears
+      - MYSQL_ROOT_HOST=%
+      - MYSQL_ROOT_PASSWORD="${MYSQL_ROOT_PASSWORD}"
     volumes:
-      - ./database:/data/db
+      - ./database/mysql:/var/lib/mysql
   webui:
     build: webui
+    environment:
+      - NGINX_HOST="${NGINX_HOST}""
+      - NGINX_PORT=80
     ports:
       - 80:80
     volumes:

@@ -4,7 +4,21 @@ import os
 import io
 import zipfile
 
+import mysql.connector
+
 app = Flask(__name__)
+
+mysqlPassword = os.environ.get('MYSQL_ROOT_PASSWORD') or 'password123'
+
+config = {
+    'user': 'root',
+    'password': mysqlPassword,
+    'host': 'db',
+    'port': '3306',
+    'database': 'gears',
+    'auth_plugin': 'mysql_native_password'
+}
+connection = mysql.connector.connect(**config)
 
 @app.route('/')
 def test():
@@ -102,4 +116,4 @@ def generateOverlayZip():
 app.config.from_object(os.environ.get('API_SETTINGS') or 'config.Config')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0')
