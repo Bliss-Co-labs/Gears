@@ -6,6 +6,7 @@ services:
     ports:
       - 5000:5000
     environment:
+      MYSQL_USER: "${MYSQL_USER}"
       MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
     links:
       - db

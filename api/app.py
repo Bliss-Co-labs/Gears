@@ -11,10 +11,11 @@ app = Flask(__name__)
 
 def connectToMySQL():
     global connection
+    mysqlUser = os.environ.get('MYSQL_USER') or 'user'
     mysqlPassword = os.environ.get('MYSQL_PASSWORD') or 'password123'
 
     config = {
-        'user': 'gears',
+        'user': mysqlUser,
         'password': mysqlPassword,
         'host': 'db',
         'port': '3306',

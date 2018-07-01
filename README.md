@@ -22,6 +22,8 @@ Running this project
 ------
 You need [Docker](docker.com) installed and running
 
+Set `MYSQL_USER`, `MYSQL_PASSWORD`, and `NGINX_HOST` in your environment first or things won't work
+
 `docker-compose build` will build the services and create the docker instance and make it ready to run
 
 `docker-compose up` will run it
@@ -40,7 +42,6 @@ TODO
 ------
  - Flesh out API to do something
  - Add overlays
- - Add a database schema
  - Add a way to easily add overlays to the database
  - Create the web ui
  - Create the service app in the ROM
