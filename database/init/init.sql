@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS selectedoverlays (
         FOREIGN KEY (userid) REFERENCES users(id) ON DELETE CASCADE
       );
 
-CREATE TABLE IF NOT EXISTS selectedoverlays (
+CREATE TABLE IF NOT EXISTS overlays (
         id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
         author VARCHAR(256) NOT NULL,
         name VARCHAR(256) NOT NULL,
