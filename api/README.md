@@ -16,7 +16,7 @@ Arguments:
 
 POST Data:
 
-    "device": {
+    {
       "uuid": "SomeKindOfUniqueIDHere",
       "model": "Nexus 5X",
       "codename": "bullhead",
