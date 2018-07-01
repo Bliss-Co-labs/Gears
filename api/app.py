@@ -3,22 +3,31 @@ from flask import Flask, abort, request, jsonify, send_file
 import os
 import io
 import zipfile
+import time
 
 import mysql.connector
 
 app = Flask(__name__)
 
-mysqlPassword = os.environ.get('MYSQL_ROOT_PASSWORD') or 'password123'
+def connectToMySQL():
+    global connection
+    mysqlPassword = os.environ.get('MYSQL_PASSWORD') or 'password123'
 
-config = {
-    'user': 'root',
-    'password': mysqlPassword,
-    'host': 'db',
-    'port': '3306',
-    'database': 'gears',
-    'auth_plugin': 'mysql_native_password'
-}
-connection = mysql.connector.connect(**config)
+    config = {
+        'user': 'gears',
+        'password': mysqlPassword,
+        'host': 'db',
+        'port': '3306',
+        'database': 'gears'
+    }
+
+    try:
+        connection = mysql.connector.connect(**config)
+    except Exception as e:
+        time.sleep(3)
+        connectToMySQL()
+
+connectToMySQL()
 
 @app.route('/')
 def test():
