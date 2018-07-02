@@ -40,13 +40,11 @@ Set `MYSQL_USER`, `MYSQL_PASSWORD`, and `NGINX_HOST` in your environment first o
 
 TODO
 ------
- - Flesh out API to do something
  - Add overlays
  - Add a way to easily add overlays to the database
  - Create the web ui
  - Create the service app in the ROM
  - Run on a real server
- - Remove `api/testzip`
  - Some kind of 2FA to pair phone with browser session
  - Add an API to tell server the settings and overlays used
  - Create a `vendor/gears` repo for easily adding to a rom
