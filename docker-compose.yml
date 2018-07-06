@@ -33,4 +33,4 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./webUI/content:/usr/share/nginx/html
+      - ./webui/content:/usr/share/nginx/html

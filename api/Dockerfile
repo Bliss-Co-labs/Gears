@@ -7,7 +7,6 @@ COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
 COPY app.py config.py ./
-COPY testzip ./
 
 ENV FLASK_APP app.py
 ENV API_SETTINGS="${API_SETTINGS}"
